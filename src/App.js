@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Menuone from './components/Menuone';
+import Menuthree from './components/Menuthree';
+import Menutwo from './components/Menutwo';
+import Barra from './layout/Barra';
+
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+    <Routes>
+
+
+    <Route path='/' element={<Barra/>}>
+
+      <Route path='Menutwo' element={  <Menutwo/>   }     />
+      <Route path='Menuthree' element={  <Menuthree/>   }     />
+      <Route index element={  <Menuone/>   }     />
+    </Route>
+
+
+
+
+
+    </Routes>
+    </BrowserRouter>
   );
 }
 
